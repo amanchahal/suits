@@ -1,0 +1,35 @@
+  <div class="dashboard"><a href = "/trainer/dashboard">Dashboard</a></div>
+</div>
+ <% include ../templates/trainerleftbar %>
+<div class="col-md-9 col-sm-8 col-xs-12 "> 
+    <div class="form-box"> 
+	  <%
+         if (typeof errflash != 'undefined') {
+            %>
+            <div role="alert" class="alert alert-danger alert-dismissible fade in">
+               <button aria-label="Close" data-dismiss="alert" class="close" type="button">
+                  <span aria-hidden="true">x</span>
+               </button>
+               <%= errflash %>   
+            </div>
+            <%
+            
+         }
+      %>
+    <div class="alert alert-warning" role="alert">
+        <div class="user-name">Username:</div>
+        <strong><%= userprofile._user.username %></strong><br/><br/>
+        <div class="user-name">Full Name:</div>
+        <strong><%= userprofile.fname %>  <%= userprofile.lname %></strong><br/><br/>
+        <div class="user-name">Phone no.</div>
+        <strong><%= userprofile.phone %></strong><br/><br/>
+        <div class="user-name">Email</div>
+        <strong><%= userprofile.email %></strong><br/><br/><br/><br/>
+        <a href="/trainer/listclients" class="btn btn-default">Back</a>
+	</div>
+</div>
+</div>
+
+  </div>
+  </div>
+</div>

@@ -1,0 +1,155 @@
+
+  <div class="dashboard"><a href = "/trainer/dashboard">Dashboard</a></div>
+</div>
+
+  <div class="main-box">
+    <div class="container">
+      <div class="col-md-3 col-sm-12">
+        <div class="about-box-1">
+          <div class="about-box-1-top">CARDIO TRAINING</div>
+          <div class="about-box-1-postbox">Lorem Ipsum is simply dummy text</div>
+          <div class="enter-message">Enter a message</div>
+          <div class="col-md-12">
+            <input type="text" name="Name" class="box-1-message">
+            <input type="submit" class="post-btn" name="post" value="POST">
+            <div class="email-check">
+              <input type="checkbox" checked="checked" value="Also Send To Email Group">
+              Also Send To Email Group</div>
+          </div>
+          
+          <P>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</P>
+        </div>
+      </div>
+      
+      
+      <div class="col-md-6 col-sm-12">
+        <div class="about-box-2">
+          <div class="about-box-2-top">List of clients
+            <span class="pull-right"><a href="/trainer/addnewclient" class="post-btn">Add new</a></span>
+          </div>
+          <div class="about-box-2-postbox">Following are my clients</div>
+          <%
+            for (var i=0; i < trainers.length; i++) {
+             
+              %>
+          <P><a href = "/trainer/viewclient/<%= trainers[i]._clientid._id %>" title="view detail of <%= trainers[i]._clientid.username %>"><%= trainers[i]._clientid.username %></a></P>
+          
+          <% } %>
+          <br/>
+          <p><a href="/trainer/listclients" id="show-clients" class="btn btn-info">Show more</a></p>
+          
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-12">
+        <div class="about-box-3">
+          <div class="about-box-3-top">POWER TRAINING</div>
+          <div class="about-box-3-postbox">Lorem Ipsum is simply </div>
+          <p>Lorem Ipsum is simply dummy text</p>
+          <p>Lorem Ipsum is simply dummy text</p>
+          <div class="col-md-12 col-sm-12">
+            <select class="select-issue">
+              <option value="Lorem Ipsum is simply">Lorem Ipsum is simply</option>
+              <option value="Lorem Ipsum has been">Lorem Ipsum has been</option>
+              <option value="Lorem Ipsum is simply">Lorem Ipsum is simply</option>
+              <option value="Lorem Ipsum has been">Lorem Ipsum has been</option>
+            </select>
+          </div>
+          <div class="comment">Add a comment</div>
+          <div class="col-md-12 col-sm-12 col-xs-12">
+            <input type="text" name="Name" class="box-3-comment">
+            <input type="submit" class="post-btn" name="post" value="SEND">
+            <div class="copy-check">
+              <input type="checkbox" checked="checked" value="Copy sender to request">
+              Copy sender to request</div>
+            <div class="help-desk"><a href="#">Go To Help Desk ></a></div>
+          </div>
+        </div>
+      </div></div></div></div>
+      
+      
+      <div class="container">
+      <div class="second-box">
+     
+         <div class="col-md-3 col-sm-12">
+        <div class="structure-box">
+          <div class="structure-box-top">STRUCTURE</div>
+          <div class="col-md-12 col-sm-12">
+          <select class="select-area">
+              <option value="Lorem Ipsum is simply">Design Forum artical</option>
+            </select>
+            </div>
+          
+          <ul>
+            <li><a href="#"> Lorem Ipsum</a></li>
+            <li><a href="#"> Lorem Ipsum</a></li>
+            <li><a href="#"> Lorem Ipsum</a></li>
+            <li><a href="#"> Lorem Ipsum</a></li>
+            <li><a href="#"> Lorem Ipsum</a></li>
+            <li><a href="#"> Lorem Ipsum</a></li>
+            <li><a href="#"> Lorem Ipsum</a></li>
+            <li><a href="#"> Lorem Ipsum</a></li>
+            <li><a href="#"> Lorem Ipsum</a></li>
+            <li><a href="#"> Lorem Ipsum</a></li>
+            <li><a href="#"> Lorem Ipsum</a></li>
+            <li><a href="#"> Lorem Ipsum</a></li>
+          </ul>
+          
+          <div class="site-manager"><a href="#">Go To Site  Manager ></a></div>
+        </div>
+      </div>
+      
+      
+      
+      
+      
+      <div class="col-md-6 col-sm-12">
+      
+      
+        <div class="add-page">
+          <div class="add-page-top">Quicy add page</div>
+          <div class="add-page-postbox">Create a placeholder</div>
+          <div class="page-name">Page Name </div>
+          <div class="col-md-12 col-sm-12">
+            <input type="text" class="page-box" name="pagename">
+            <div class="select-location">Select Location </div>
+            <select class="location-box">
+              <option value="Lorem Ipsum is simply"></option>
+            </select>
+            <div class="choose-page">Choose Page Present</div>
+            <select class="choose-page-box">
+              <option value="Lorem Ipsum is simply">Design Forum artical</option>
+            </select>
+            <div class="placeholder-block">Placeholder Block (Opional)</div>
+            <input type="text" name="Name" class="placeholder-box">
+            <input type="submit" class="create-page" name="post" value="CREATE PAGE">
+            <input type="submit" class="cancel" name="post" value="CANCEL">
+          </div>
+        </div>
+      </div>
+      
+      
+      
+   
+      
+      <div class="col-md-3 col-sm-12">
+        <div class="admin-menu">
+          <div class="admin-menu-top">ADMIN MENU</div>
+          <div class="admin-menu-editorial">EDITORIAL</div>
+          <ul>
+            <li><a href="#">> Home</a></li>
+            <li><a href="#">> About</a></li>
+            <li><a href="#">> Our Classes</a></li>
+            <li><a href="#">> Contact</a></li>
+          </ul>
+          <div class="technical">TECHNICAL</div>
+          <ul>
+            <li><a href="#">> Responsive List</a></li>
+          </ul>
+        </div>
+        </div>
+      </div>
+      </div>
+      
+     </div>
+   
+    </div>

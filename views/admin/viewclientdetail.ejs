@@ -1,0 +1,69 @@
+<script type="text/javascript" src="/javascripts/jquery.validate.min.js"></script>
+<script type="text/javascript" src="/javascripts/additional-methods.min.js"></script>
+<script type="text/javascript" >
+   jQuery(document).ready(function(){
+        jQuery("#pass-form").validate({
+            rules: {
+				repass: {
+					equalTo: "#newpass"
+				}
+            },
+            messages:{
+				repass: {
+					equalTo: "Please enter the same password as above"
+				}
+            }
+        });
+   });
+</script>
+<div class="col-md-9 col-sm-8 col-xs-12 "> 
+    <div class="form-box">                                          
+  
+  
+  <form method="post" action="/admin/trainer/update/<%= users._id %>" id="pass-form">
+    <%
+         if (typeof flash != 'undefined') {
+            %>
+            <div role="alert" class="alert alert-success alert-dismissible fade in">
+               <button aria-label="Close" data-dismiss="alert" class="close" type="button">
+                  <span aria-hidden="true">x</span>
+               </button>
+               <%= flash %>   
+            </div>
+            <%
+            
+         }
+      %>
+	  <%
+         if (typeof errflash != 'undefined') {
+            %>
+            <div role="alert" class="alert alert-danger alert-dismissible fade in">
+               <button aria-label="Close" data-dismiss="alert" class="close" type="button">
+                  <span aria-hidden="true">x</span>
+               </button>
+               <%= errflash %>   
+            </div>
+            <%
+            
+         }
+      %>
+    <div class="alert alert-warning" role="alert">
+        <div class="user-name">Username:</div>
+        <strong><%= users.username %></strong><br/><br/>
+        <div class="user-name">Full Name:</div>
+        <strong><%= userprofile.fname %>  <%= userprofile.lname %></strong><br/><br/>
+        <div class="user-name">Phone no.</div>
+        <strong><%= userprofile.phone %></strong><br/><br/>
+        <div class="user-name">Email</div>
+        <strong><%= userprofile.email %></strong><br/><br/>
+        <div class="user-name">Fitness Trainer assigned</div>
+        <strong><%= trainer.fname %>  <%= trainer.lname %></strong><br/><br/>
+        <a href="/admin/client/" class="btn btn-default">Back</a>
+	</div>
+</form>
+</div>
+</div>
+
+  </div>
+  </div>
+</div>

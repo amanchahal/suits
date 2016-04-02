@@ -1,0 +1,92 @@
+<script type="text/javascript" src="/javascripts/jquery.validate.min.js"></script>
+<script type="text/javascript" src="/javascripts/additional-methods.min.js"></script>
+<script type="text/javascript" >
+   jQuery(document).ready(function(){
+        jQuery("#pass-form").validate({
+            rules: {
+                newpass: {
+					required: true
+				},
+				repass: {
+					required: true,
+					equalTo: "#newpass"
+				}
+            },
+            messages:{
+                newpass: {
+					required: "Please provide a password",
+				},
+				repass: {
+					required: "Please provide a password",
+					equalTo: "Please enter the same password as above"
+				}
+            }
+        });
+   });
+</script>
+<div class="col-md-12 col-sm-8 col-xs-12 ">
+    <form method="post" action="/trainer/signup" id="pass-form">
+    <div class="sign-up-box">
+    <div class="col-md-6 col-sm-8 col-xs-12 "> 
+     
+        <%
+         if (typeof flash != 'undefined') {
+            %>
+            <div role="alert" class="alert alert-success alert-dismissible fade in">
+               <button aria-label="Close" data-dismiss="alert" class="close" type="button">
+                  <span aria-hidden="true">x</span>
+               </button>
+               <%= flash %>   
+            </div>
+            <%
+            
+         }
+      %>
+	  <%
+         if (typeof errflash != 'undefined') {
+            %>
+            <div role="alert" class="alert alert-danger alert-dismissible fade in">
+               <button aria-label="Close" data-dismiss="alert" class="close" type="button">
+                  <span aria-hidden="true">x</span>
+               </button>
+               <%= errflash %>   
+            </div>
+            <%
+            
+         }
+      %>
+        <div class="sign-up-left">
+            <div class="sign-up-text">Sign up as Fitness Trainer</div>
+            <div class="user-name-sign-up" >First Name</div>
+            <input type="text" class="form-control"  name="fname" required>
+            <div class="user-name-sign-up" >Last Name</div>
+            
+            <input type="text" class="form-control" name="lname" required>
+            <div class="user-name-sign-up"  >E-mail</div>
+            
+            <input type="text" class="form-control" name="email"  required>
+            <div class="user-name-sign-up">Phone</div>
+            
+            <input type="text" class="form-control" name="phone" required>
+            <button type="submit" class="submit-btn">Submit</button>
+            <button type="button" class="cancel-btn">Cancel</button>
+        </div>
+    </div>
+    
+    <div class="col-md-6 col-sm-8 col-xs-12 "> 
+        <div class="sign-up-right">
+            <div class="user-name-sign-up">User Name</div>
+            <input type="text" class="form-control" name="username" required>
+            <div class="user-name-sign-up">Password</div>
+            <input type="password" class="form-control" name= "pass" id="newpass" required>
+            <div class="user-name-sign-up">Retype Password</div>
+            <input type="password" class="form-control" name="repass" id="repass" required>
+        </div>
+    </div>
+</div>
+    </form> 
+</div>
+    
+  </div>
+  </div>
+</div>

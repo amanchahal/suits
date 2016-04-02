@@ -1,0 +1,101 @@
+<script type="text/javascript" src="/javascripts/jquery.validate.min.js"></script>
+<script type="text/javascript" src="/javascripts/additional-methods.min.js"></script>
+<script type="text/javascript" >
+   jQuery(document).ready(function(){
+        jQuery("#pass-form").validate({
+            rules: {
+                newpass: {
+					required: true
+				},
+				repass: {
+					required: true,
+					equalTo: "#newpass"
+				}
+            },
+            messages:{
+                newpass: {
+					required: "Please provide a password",
+				},
+				repass: {
+					required: "Please provide a password",
+					equalTo: "Please enter the same password as above"
+				}
+            }
+        });
+   });
+</script>
+<div class="col-md-9 col-sm-8 col-xs-12 "> 
+    <div class="form-box">                                          
+  
+  
+  <form method="post" action="/admin/client/add" id="pass-form">
+    <%
+         if (typeof flash != 'undefined') {
+            %>
+            <div role="alert" class="alert alert-success alert-dismissible fade in">
+               <button aria-label="Close" data-dismiss="alert" class="close" type="button">
+                  <span aria-hidden="true">x</span>
+               </button>
+               <%= flash %>   
+            </div>
+            <%
+            
+         }
+      %>
+	  <%
+         if (typeof errflash != 'undefined') {
+            %>
+            <div role="alert" class="alert alert-danger alert-dismissible fade in">
+               <button aria-label="Close" data-dismiss="alert" class="close" type="button">
+                  <span aria-hidden="true">x</span>
+               </button>
+               <%= errflash %>   
+            </div>
+            <%
+            
+         }
+      %>
+    <div class="user-name">First Name</div>
+    
+    <input type="text" class="form-control" name="fname" required/>
+    <div class="user-name">Last Name</div>
+    
+    <input type="text" class="form-control" name="lname" required/>
+  <div class="user-name">User Name</div>
+    
+    <input type="text" class="form-control" name="username" required/>
+ 
+ <div class="user-name">Password</div>
+    
+    <input type="password" class="form-control" name= "pass" id="newpass" required />
+      
+      <div class="user-name">Retype Password</div>
+      <input type="password" class="form-control" name="repass" id="repass" required />
+      
+      <div class="user-name">Email</div>
+      <input type="email" class="form-control" name="email"  required />
+      <div class="user-name">Phone</div>
+      <input type="text" class="form-control" name="phone" required />
+	  <div class="user-name">Select Fitness Trainer for the Client</div>
+	  
+	  <select class="form-control" name="trainerid">
+		 <%
+        for (var i=0;i < users.length;i++){
+		  if (users[i]._user != null) { 
+       %>
+		 <option value="<%= users[i]._user._id %>"><%= users[i].fname + " " + users[i].lname %></option>
+		 
+		 <% }
+	  }
+		 %>
+	  </select>
+	  <button type="submit" class="submit-btn">Submit</button>
+	  <button type="button" class="cancel-btn">Cancel</button>
+ 
+</form>
+</div>
+</div>
+
+  </div>
+  </div>
+</div>

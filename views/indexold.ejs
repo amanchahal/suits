@@ -1,0 +1,208 @@
+<script type="text/javascript" src="/javascripts/jquery.validate.min.js"></script>
+<script type="text/javascript" >
+   jQuery(document).ready(function(){
+      jQuery("#login-form").validate();
+   });
+</script>
+<div class="banner">
+   <div class="container">
+   <div class="col-md-4 col-xs-12 col-sm-12 col-md-offset-4">
+   <div class="search-box">
+   <div class="col-md-12 col-sm-12 col-xs-12">
+   <div class="member-login">
+   <h5>
+    MEMBER LOGIN</h5>
+    </div>
+    
+    <div class="col-sm-12 col-sm-offset-1">
+	  <form class="form-horizontal" role="form" id="login-form" action="/login" method="post">
+  <div class="form-group">
+      <%
+         if (typeof flash != 'undefined') {
+            %>
+            <div role="alert" class="alert alert-danger alert-dismissible fade in">
+               <button aria-label="Close" data-dismiss="alert" class="close" type="button">
+                  <span aria-hidden="true">x</span>
+               </button>
+               <%= flash %>   
+            </div>
+            <%
+            
+         }
+      %>
+    <div class="col-sm-10 col-md-10">
+    <div class="emailbox">
+      <input type="text" class="form-control" name="username"  placeholder="Username" required></div>
+    </div>
+  </div>
+  <div class="form-group">
+   
+    <div class="col-sm-10 col-md-10">
+      <input type="password" class="form-control" name="password"  placeholder="Password" required>
+    </div>
+    
+  </div>
+  
+  
+  
+  <div class="form-group">
+    <div class="col-sm-10 col-xs-12 col-md-10">
+	  <a href="/trainer/signup" class="forget-password" title="Sign up as trainer">Sign up as trainer</a>
+	  <a href="#" class="forget-password">Forget Password?</a>
+      <button type="submit" class="btn btn-primary btn-block">SIGN IN</button></div>
+      
+  </div>
+	  </form>
+    
+    
+  
+  
+  
+  
+  
+			</div>
+		</section>
+	</div>
+</div>
+      </div>
+      
+    
+    
+  </div>
+</form>
+</div>
+</div>
+</div>
+   </div>
+   </div>
+   </div>
+   
+   
+   
+   
+   <div class="row">
+   <div class="container">
+   <div class="col-md-3 col-sm-3">
+   <div class="box-1">
+   <img src="images/box-1.png" alt=""><br>
+   <h4>CARDIO</h4>
+    <button type="button" class="btn btn-primary btn-md">READ MORE</button>    
+   </div>
+   </div>
+   
+   <div class="col-md-3 col-sm-3">
+   <div class="box-2">
+   <img src="images/box-2.png" alt=""><br>
+
+   <h4>YOGA PILATES</h4>
+    <button type="button" class="btn btn-primary btn-md">READ MORE</button>
+   </div>
+   </div>
+   
+   
+   <div class="col-md-3 col-sm-3">
+   <div class="box-3">
+   <img src="images/box-3.png" alt=""><br>
+
+   <h4>POWER</h4>
+    <button type="button" class="btn btn-primary btn-md">READ MORE</button>
+   </div>
+   </div>
+   
+   
+   <div class="col-md-3 col-sm-3">
+   <div class="box-4">
+   <img src="images/box-4.png" alt=""><br>
+
+   <h4>AEROBICS</h4>
+    <button type="button" class="btn btn-primary btn-md">READ MORE</button>
+   </div>
+   </div>
+   
+   </div>
+   </div>
+   
+   
+   <div class="row">
+   <div class="index-bg">
+   <div class="container">
+   <div class="col-md-4 col-sm-4 col-xs-12">
+   <div class="left-img">
+   <img src="images/left-img.png" alt="">
+   </div>
+   </div>
+   
+   <div class="col-md-8 col-sm-8 col-xs-12">
+   <div class="right-text">
+
+<p>We believe in...<br>
+<br>
+
+
+Cras libero ante, tincidunt nec ornare vitae, dignissim vel neque. Ut ac rhoncus
+ante, ut elementum ipsum. Suspendisse egestas semper dui id pellentesque.
+Aenean interdum, tortor ullamcorper semper hendrerit, lacus orci dictum erat, 
+id vestibulum massa nunc nec enim. Cras placerat commodo aliquam. Mauris 
+pulvinar tempor libero. Aenean aliquet. </p>
+<button type="button" class="btn btn-primary btn-md-second">LEARN MORE</button>
+   </div>
+   </div>
+   
+   </div>
+   </div>
+   </div>
+   
+   
+   <div class="row">
+   <div class="container">
+   <div class="middle-bottom">
+   <h2>FREE DIET ASSESSMENT</h2>
+   <div class="border"></div>
+   <div class="col-md-12">
+   <div class="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+scrambled it to make a type specimen book.</div></div>
+   </div>
+   </div>
+   </div>
+   
+   <div class="row">
+   
+   <div class="contact-form-bg">
+   <div class="container">
+   <div class="col-md-6">
+   <form class="form-horizontal" role="form">
+  <div class="form-group">
+   <div class="get-touch">
+   <h2>Get In Touch</h2>
+   </div>
+    <div class="col-sm-10">
+      <input type="Name" class="form-control" id="Name" placeholder="Name">
+    </div>
+  </div>
+  <div class="form-group">
+   
+    <div class="col-sm-10">
+      <input type="E-mail Address" class="form-control" id="E-mail Address" placeholder="E-mail Address">
+    </div>
+  </div>
+  
+  <div class="form-group">
+   
+    <div class="col-sm-10">
+      <input type="Phone number" class="form-control" id="pwd" placeholder="Phone number">
+    </div>
+  </div>
+  
+  <div class="form-group">
+   
+    <div class="col-sm-10">
+      <input type="Your Message" class="message" id="pwd" placeholder="Your Message">
+    </div>
+    <button type="button" class="btn btn-primary btn-md-third">LEARN MORE</button>
+  </div>
+  </form>
+  </div>
+   </div>
+   </div>
+   </div>

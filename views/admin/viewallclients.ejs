@@ -1,0 +1,79 @@
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/locale/en-gb.js"></script>
+<%
+       if(typeof flash != 'undefined'){
+       %>
+       <div role="alert" class="alert alert-danger alert-dismissible fade in">
+          <button aria-label="Close" data-dismiss="alert" class="close" type="button">
+             <span aria-hidden="true">x</span>
+          </button>
+          <%= flash %>   
+       </div>
+       <%
+    }else{
+       
+  
+%>
+       <!--<form method="post" action="/admin/client/search">
+     <input type="search" placeholder="Search..." name="keyword" class="table-search">
+   <button type="submit" class="panel-search">
+           Search 
+        </button>
+   </form>-->
+   
+   <div class="col-md-9 col-sm-8 col-xs-12 ">
+      <br/><br/>
+    <div class="table-responsive"></div>                                          
+  
+  <table class="table" cellpadding="1" cellspacing="1" border="1">
+   <thead>
+      <tr class="active">
+        <th colspan = '3'><h4><b>View All Clients</b></h4></th>
+          
+        
+       <th> <a href="/admin/client/add" class="btn btn-info btn-sm ">
+          <span class="glyphicon glyphicon-plus"></span> Create new
+        </a></th>
+      </tr>
+    <thead>
+      <tr class="success">
+        <th>Client Username</th>
+        <th>Client Name</th>
+        <th>Trainer Name</th>
+        <th>Member Since</th>
+        <th>Action</th>
+      
+      </tr>
+      
+      
+    </thead>
+    <tbody>
+         <%
+            
+            users.forEach(function(item){
+               if (item._trainerid !== null) {
+         %>
+      <tr class="info">
+        <td><%= item._clientid.username %></td>
+        <td><%= usernames[item._clientid._id] %></td>
+        <td><%= usernames[item._trainerid._id] %></td>
+       <td><span class="date"><%= item.created %></span></td>
+        <td><a href="/admin/client/view/<%= item._clientid._id %>/<%= userprofileid[item._clientid._id] %>/<%= item._id %>" title="View">
+          <span class="glyphicon glyphicon-refresh"></span>
+        </a>
+        <a href="/admin/client/update/<%= item._clientid._id %>/<%= userprofileid[item._clientid._id] %>/<%= item._id %>" title="Edit">
+          <span class="glyphicon glyphicon-edit"></span>
+        </a>
+         <a href="/admin/client/delete/<%= item._clientid._id %>/<%= userprofileid[item._clientid._id] %>/<%= item._id %>" onClick="return confirm('Are you sure?')" title="Delete">
+          <span class="glyphicon glyphicon-trash"></span>
+        </a>
+        </td>
+      </tr>
+      <% }}); %>
+    </tbody>
+  </table>
+  
+  </div>
+  </div>
+</div>
+<% } %>
